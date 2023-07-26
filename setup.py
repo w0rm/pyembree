@@ -8,7 +8,7 @@ from Cython.Build import cythonize
 include_path = [np.get_include()]
 
 ext_modules = cythonize('pyembree/*.pyx', language='c++',
-                        include_path=include_path)
+                        include_path=include_path, language_level=3)
 for ext in ext_modules:
     ext.include_dirs = include_path
     ext.libraries = ["embree"]
